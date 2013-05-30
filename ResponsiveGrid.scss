@@ -37,9 +37,6 @@ $min_width : 550px;
 	.col_1-#{$i} {
 		width: (100%/$i);
 	}
-}
-
-@for $i from 1 through 11 {
 	.col_#{$i}-12 {
 		width: ((100%/12)*$i);
 	}
