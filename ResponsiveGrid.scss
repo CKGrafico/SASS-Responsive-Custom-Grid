@@ -1,0 +1,64 @@
+// Variables
+$breakpoint_1 : 800px;
+$breakpoint_2 : 550px;
+$min_width : 550px;
+
+
+.grid {
+	display: table;
+	margin: 0 auto;
+	padding: 1%;
+	width: 98%;
+
+	@media only screen and (max-width: $breakpoint_1){
+		font-size: 0.8em;
+		padding: 0.1%;
+		width: 99.9%;
+	}
+}
+
+.grid-row {
+	display: table-row;
+	width: 100%;
+}
+
+/* Columns Grid */
+// .col_1-1 { width: 100%; }
+// @for $i from 1 through 12 {
+// 	@for $j from 1 through ($i - 1) {
+// 		.col_#{$j}-#{$i} {
+// 			width: ((100%/$i)*$j);
+// 		}
+// 	}
+// }
+
+/* Columns Grid V2 */
+@for $i from 1 through 11 {
+	.col_1-#{$i} {
+		width: (100%/$i);
+	}
+}
+
+@for $i from 1 through 11 {
+	.col_#{$i}-12 {
+		width: ((100%/12)*$i);
+	}
+}
+
+/* All Columns */
+[class*='col_'] {
+	display: inline-block;
+	@media only screen and (max-width: $breakpoint_2){
+		width: 100%
+	}
+}
+
+/* Mediaqueries */
+@media only screen and (max-width: $breakpoint_2){
+	.three_quarters { width: 75%; }
+	.half {	width: 50%;	}
+
+	.third { width: 33.3333333%; }
+
+	.fourth { width: 25%; }
+}
