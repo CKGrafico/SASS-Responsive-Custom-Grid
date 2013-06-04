@@ -1,61 +1,63 @@
-// Variables
-$breakpoint_1 : 800px;
-$breakpoint_2 : 550px;
-$min_width : 550px;
+@mixin ResponsiveGrid(
+	// Number of columns #default: 12
+	$max : 12,
+	// Columns 1 to i #default: 1-1 1-2 1-3 1-4 1-5 1-6 1-7 1-8 1-9 1-10 1-11 1-12
+	$one-i: 1 2 3 4 5 6 7 8 9 10 11 12,
+	// Columns i to max #default: 2-12 3-12 4-12 5-12 6-12 7-12 8-12 9-12 10-12 11-12
+	$i-max : 2 3 4 5 6 7 8 9 10 11,
+	// Breakpoints #default: two defect breakpoints
+	$breakpoint_1 : 800px,
+	$breakpoint_2 : 550px
+){
+	.grid {
+		display: table;
+		margin: 0 auto;
+		padding: 1%;
+		width: 98%;
 
-
-.grid {
-	display: table;
-	margin: 0 auto;
-	padding: 1%;
-	width: 98%;
-
-	@media only screen and (max-width: $breakpoint_1){
-		font-size: 0.8em;
-		padding: 0.1%;
-		width: 99.9%;
+		@media only screen and (max-width: $breakpoint_1){
+			font-size: 0.8em;
+			padding: 0.1%;
+			width: 99.9%;
+		}
 	}
-}
 
-.grid-row {
-	display: table-row;
-	width: 100%;
-}
-
-/* Columns Grid */
-// .col_1-1 { width: 100%; }
-// @for $i from 1 through 12 {
-// 	@for $j from 1 through ($i - 1) {
-// 		.col_#{$j}-#{$i} {
-// 			width: ((100%/$i)*$j);
-// 		}
-// 	}
-// }
-
-/* Columns Grid V2 */
-@for $i from 1 through 11 {
-	.col_1-#{$i} {
-		width: (100%/$i);
+	.grid-row {
+		display: table-row;
+		width: 100%;
 	}
-	.col_#{$i}-12 {
-		width: ((100%/12)*$i);
-	}
-}
 
-/* All Columns */
-[class*='col_'] {
-	display: inline-block;
+	/* Columns Grid V2 */
+	@each $i in $one-i{
+		.col_1-#{$i} {
+			width: (100%/$i);
+		}
+	}
+
+	@each $i in $i-max{
+		@if $i > $max {
+			@warn "Error: Yo can't have column number bigger than max number : "+$max+" < "+$i;
+		}
+		.col_#{$i}-12 {
+			width: ((100%/$max)*$i);
+		}
+	}
+
+	/* All Columns */
+	[class*='col_'] {
+		display: inline-block;
+		@media only screen and (max-width: $breakpoint_2){
+			width: 100%
+		}
+	}
+
+	/* Mediaqueries */
 	@media only screen and (max-width: $breakpoint_2){
-		width: 100%
+		.three_quarters { width: 75%; }
+		.half {	width: 50%;	}
+
+		.third { width: 33.3333333%; }
+
+		.fourth { width: 25%; }
 	}
-}
-
-/* Mediaqueries */
-@media only screen and (max-width: $breakpoint_2){
-	.three_quarters { width: 75%; }
-	.half {	width: 50%;	}
-
-	.third { width: 33.3333333%; }
-
-	.fourth { width: 25%; }
 }
