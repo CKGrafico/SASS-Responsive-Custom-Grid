@@ -29,6 +29,19 @@ Thanks to this you can only use necessary css.
 
 - And also it's easy customizable
 
+##Example:
+
+```html
+<div class="grid">
+	<div class="grid-row">
+		<div class="col_1-1">Col 1-1</div>
+	</div>
+	<div class="grid-row">
+		<div class="col_1-2 half">Col 1-2</div>
+		<div class="col_1-2 half">Col 1-2</div>
+	</div>
+</div>
+```
 -----
 
 Preview: http://ckgrafico.github.io/SASS-Responsive-Custom-Grid
