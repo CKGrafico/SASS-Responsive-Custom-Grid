@@ -6,13 +6,18 @@ body{
 }
 
 [class*='col_']{
-	background: #CCC;
+	color: #F1F1F1;
+	background: #617bdf;
 	text-align: center;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	height: 20px;
-	margin-top: 10px;
-	box-shadow: inset 1px 1px 1px white;
+	padding: 10px;
+	height: 40px;
+	box-shadow: inset 1px 1px 1px #aebbee;
+}
+
+#normal [class*='col_']{
+	color: #F1F1F1;
+	background: #d5732e;
+	box-shadow: inset 1px 1px 1px #e2a172;
 }
 
 .grid{
