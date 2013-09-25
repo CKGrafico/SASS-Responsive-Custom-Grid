@@ -1,8 +1,7 @@
 ##SASS Grid
 
 ### ¿Why this?
-- Has custom responsive
-Normaly the grid templates change to single column when you resize the browser, now you can add custom classes for change this.
+- Has custom responsive. Normally the grid templates change to single column when you resize the browser, now you can add custom classes for change this.
 
 ```css
 .three_quarters -> 75%
