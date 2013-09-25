@@ -1,9 +1,0 @@
-@import 'ResponsiveGrid.scss';
-@include ResponsiveGrid(
-	// Number of columns #default: 12
-	//$max : 12,
-	// Columns 1 to i #default: 1 2 3 4 5 6 7 8 9 10 11 12
-	//$one-i: 1 2  4 5 7 9 10 12,
-	// Columns i to max #default: 2 3 4 5 6 7 8 9 10 11
-	//$i-max : 2 3 5 6 7 9 11
-)
