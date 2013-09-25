@@ -32,4 +32,4 @@ Thanks to this you can only use necessary css.
 
 -----
 
-Preview: http://ckgrafico.github.io/RealResponsiveGrid/
+Preview: http://ckgrafico.github.io/SASS-Responsive-Custom-Grid
